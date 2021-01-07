@@ -3,6 +3,7 @@
     <h2>
       <input type="checkbox" v-on:change="markComplete">
       {{todo.title}}
+      <button @click="$emit('del-todo', todo.id)" class="del">&#10006;</button>
     </h2>
   </div>
 </template>
@@ -34,6 +35,12 @@
       text-decoration: line-through;
     }
     .del{
-
+      background: #ff0000;
+      color: #fff;
+      border: none;
+      padding: 5px 9px;
+      border-radius: 50%;
+      cursor: pointer;
+      float: right;
     }
 </style>
